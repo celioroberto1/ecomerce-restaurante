@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tilt+Neon&display=swap');
+
+
+:root {
+    --green: #27ae60; /* Define uma variável CSS global chamada '--green' com o valor '#27ae60', que é uma cor verde. Esta variável pode ser usada em qualquer lugar dentro da folha de estilos para manter a consistência na aplicação de cores. */
+    --black: #192a56; /* Define uma variável CSS global chamada '--black' com o valor '#192a56', que é uma cor preta. Esta variável pode ser usada em qualquer lugar dentro da folha de estilos para manter a consistência na aplicação de cores. */
+    --light-color: #666; /* Define uma variável CSS global chamada '--light-color' com o valor '#666', que é uma cor cinza claro. Esta variável pode ser usada em qualquer lugar dentro da folha de estilos para manter a consistência na aplicação de cores. */
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1); /* Define uma variável CSS global chamada '--box-shadow' com um valor que representa um efeito de sombra. Esta variável pode ser usada em qualquer lugar dentro da folha de estilos para aplicar sombras consistentes a elementos. */
+}
+
+* {
+    font-family: 'Nunito', sans-serif; /* Define a fonte padrão para todos os elementos da página como 'Nunito' e, caso não esteja disponível, uma fonte sans-serif genérica. */
+    margin: 0; /* Remove todas as margens ao redor de todos os elementos da página. */
+    padding: 0; /* Remove todo o preenchimento interno de todos os elementos da página. */
+    box-sizing: border-box; /* Define o modelo de caixa para todos os elementos como 'border-box', o que inclui o preenchimento e a borda no cálculo da largura e altura, garantindo uma melhor consistência no layout. */
+    text-decoration: none; /* Remove qualquer decoração de texto, como sublinhado, de todos os elementos da página. */
+    outline: none; /* Remove qualquer contorno ao redor de elementos focados, que normalmente ocorre ao clicar em um link. */
+    border: none; /* Remove todas as bordas de todos os elementos da página. */
+    text-transform: capitalize; /* Transforma o texto para que a primeira letra de cada palavra seja em maiúscula. */
+    transition: all .2s linear; /* Adiciona uma transição suave de 0.2 segundos com um movimento linear para todas as propriedades que estão sofrendo alterações, aplicando um efeito suave de mudança. */
+}
+
+
+html {
+    font-size: 62.5%; /* Define o tamanho da fonte base como 62.5% do tamanho padrão do navegador. Isso é comumente utilizado para facilitar o cálculo de tamanhos de fonte relativos em rem. */
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal caso a largura do conteúdo exceda a largura da janela do navegador. */
+    scroll-padding-top: 5.5rem; /* Define a quantidade de espaço superior (em relação à parte superior da janela) a ser reservada quando a navegação ocorrer através de âncoras (links de ancoragem). Isso é útil para garantir que o conteúdo não seja obscurecido pelo cabeçalho fixo. */
+    scroll-behavior: smooth; /* Define o comportamento de rolagem suave para todas as âncoras na página. Quando um link é clicado, a rolagem para o destino será suave e animada, em vez de instantânea. */
+}
+
+header {
+    position: fixed; /* Define a posição do elemento como fixa, o que significa que ele permanecerá fixo na parte superior da janela de visualização enquanto a página é rolada. */
+    top: 0; /* Define a distância do topo da janela de visualização onde o elemento fixo será posicionado. Neste caso, é fixado na parte superior. */
+    left: 0; /* Define a distância do lado esquerdo da janela de visualização onde o elemento fixo será posicionado. */
+    right: 0; /* Define a distância do lado direito da janela de visualização onde o elemento fixo será posicionado. */
+    background: #fff; /* Define a cor de fundo do elemento como branco (#fff). */
+    padding: 1rem 7%; /* Define o preenchimento interno do elemento. 1rem (16px) no topo e na parte inferior, e 7% nas laterais. */
+    display: flex; /* Define o modelo de exibição do elemento como flexível, permitindo um layout flexível dos elementos filhos. */
+    align-items: center; /* Alinha os elementos filhos verticalmente no centro do elemento pai. */
+    justify-content: space-between; /* Distribui o espaço entre os elementos filhos, alinhando-os uniformemente ao longo do eixo principal (horizontal) do elemento pai. */
+    z-index: 1000; /* Define a ordem de empilhamento do elemento, determinando sua posição em relação a outros elementos. Neste caso, define uma ordem alta (1000) para garantir que o cabeçalho fique acima de outros elementos. */
+    box-shadow: var(--box-shadow); /* Aplica uma sombra ao elemento usando a variável CSS global '--box-shadow' definida anteriormente, garantindo consistência no efeito de sombra em toda a folha de estilos. */
+}
+
+header .logo {
+    color: var(--black); /* Define a cor do texto do logotipo como a cor preta definida pela variável CSS. */
+    font-size: 2.5rem; /* Define o tamanho da fonte do logotipo como 2.5 vezes o tamanho padrão. */
+    font-weight: bolder; /* Define o peso da fonte do logotipo como mais negrito. */
+}
+
+header .logo i {
+    color: var(--green); /* Define a cor do ícone dentro do logotipo como a cor verde definida pela variável CSS. */
+}
+
+header .nav-bar a {
+    font-size: 1.7rem; /* Define o tamanho da fonte dos itens do menu como 1.7 vezes o tamanho padrão. */
+    border-radius: .5rem; /* Define o raio da borda dos itens do menu como 0.5 vezes o tamanho padrão. */
+    padding: .5em 1.5rem; /* Define o preenchimento interno dos itens do menu. */
+    color: var(--light-color); /* Define a cor do texto dos itens do menu como a cor cinza claro definida pela variável CSS. */
+}
+
+header .nav-bar a.active,
+header .nav-bar a:hover {
+    color: aliceblue; /* Define a cor do texto dos itens do menu ativos ou ao passar o mouse como branco. */
+    background-color: var(--green); /* Define a cor de fundo dos itens do menu ativos ou ao passar o mouse como a cor verde definida pela variável CSS. */
+}
+
+header .icons i,
+header .icons a {
+    cursor: pointer; /* Define o cursor do mouse como um ponteiro ao passar por cima dos ícones ou links. */
+    margin-left: .5rem; /* Define uma margem à esquerda dos ícones ou links. */
+    height: 4.5rem; /* Define a altura dos ícones ou links como 4.5 vezes o tamanho padrão. */
+    line-height: 4.5rem; /* Define a altura da linha dos ícones ou links como 4.5 vezes o tamanho padrão, para centralizar verticalmente o texto dentro deles. */
+    width: 4.5rem; /* Define a largura dos ícones ou links como 4.5 vezes o tamanho padrão. */
+    text-align: center; /* Centraliza o texto dentro dos ícones ou links. */
+    font-size: 1.7rem; /* Define o tamanho da fonte dos ícones ou links como 1.7 vezes o tamanho padrão. */
+    color: var(--black); /* Define a cor do texto dos ícones ou links como a cor preta definida pela variável CSS. */
+    border-radius: 50%; /* Define a borda dos ícones ou links como redonda, criando um efeito circular. */
+    background: #eee; /* Define uma cor de fundo para os ícones ou links. */
+}
+
+header .icons i:hover,
+header .icons a:hover {
+    color: #fff; /* Define a cor do texto dos ícones ou links ao passar o mouse como branco. */
+    background: var(--green); /* Define a cor de fundo dos ícones ou links ao passar o mouse como a cor verde definida pela variável CSS. */
+    transform: rotate(360deg); /* Aplica uma rotação de 360 graus aos ícones ou links ao passar o mouse, criando um efeito de rotação. */
+}
+
+header .icons #menu-bars {
+    display: none; /* Oculta o ícone do menu na barra de ícones. */
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%; /* Reduz o tamanho da fonte base para 55% do tamanho padrão em dispositivos com largura de tela de até 991 pixels. */
+    }
+
+    header {
+        padding: 1rem 2rem; /* Adiciona um preenchimento interno maior ao cabeçalho em dispositivos com largura de tela de até 991 pixels. */
+    }
+}
+
+@media (max-width: 768px) {
+    header .icons #menu-bars {
+        display: inline-block; /* Exibe o ícone do menu na barra de ícones em dispositivos com largura de tela de até 768 pixels. */
+    }
+
+    header .nav-bar {
+        position: absolute; /* Define a posição do menu de navegação como absoluta para sobrepor outros elementos na página. */
+        top: 100%; /* Define a distância do topo do cabeçalho para a parte inferior do menu de navegação. */
+        left: 0; /* Define a distância da esquerda do cabeçalho para a borda esquerda do menu de navegação. */
+        right: 0; /* Define a distância da direita do cabeçalho para a borda direita do menu de navegação. */
+        background: #fff; /* Define a cor de fundo do menu de navegação como branco. */
+        border-top: 1rem solid rgba(0, 0, 0, .2); /* Adiciona uma borda superior ao menu de navegação com uma sombra sutil. */
+        border-bottom: 1rem solid rgba(0, 0, 0, .2); /* Adiciona uma borda inferior ao menu de navegação com uma sombra sutil. */
+        padding: 1rem; /* Adiciona um preenchimento interno ao menu de navegação. */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Define uma forma de recorte para o menu de navegação, ocultando suas bordas superiores. */
+    }
+
+    header .nav-bar a {
+        display: block; /* Define os itens do menu como blocos para que cada um ocupe uma linha inteira. */
+        padding: 1.5rem; /* Aumenta o preenchimento interno dos itens do menu. */
+        margin: 1rem; /* Adiciona uma margem ao redor de cada item do menu. */
+        font-size: 2rem; /* Aumenta o tamanho da fonte dos itens do menu em dispositivos com largura de tela de até 768 pixels. */
+        background: #eee; /* Define uma cor de fundo para os itens do menu. */
+    }
+}
+
+
+@media(max-width:991px){
+    html{
+        font-size: 50%;
+    }
+   
+}
